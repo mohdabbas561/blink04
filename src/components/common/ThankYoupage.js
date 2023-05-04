@@ -19,7 +19,7 @@ const ThankYouPage = () => {
         <Image style={{marginTop:"-190px"}}
          width={{ base: '300px', md: '600px', lg: '700px' }}
          src={gif}></Image>
-         <Heading style={{marginTop:"-60px" , marginBottom:"60px" , color:"white"}}>Order Completed</Heading>
+         <Heading style={{marginTop:"-60px" , marginBottom:"60px" , color:"#f8983a"}}>Order Completed</Heading>
          
     </Box>
     </>

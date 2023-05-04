@@ -4,11 +4,13 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
+    
   }
   
   .thank-you-page h1 {
     font-size: 3rem;
     margin-bottom: 2rem;
+    color: #f8983a;
   }
   
   .thank-you-page p {

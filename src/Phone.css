@@ -4,7 +4,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: black;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .textx1 {
@@ -72,13 +73,16 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: black;
+  background-color: var(--bg-color);
+color: var(--text-color);
   margin-top: -103px;
 }
 
 .image-container {
   flex: 1;
   width: 50%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .image-container img{
