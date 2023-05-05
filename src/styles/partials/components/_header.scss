@@ -109,8 +109,8 @@
             @include transition(all, 0.3s, ease);
 
             &:hover {
-                color: #eee;
-                border-color: #eee;
+                color: #f8983a;
+                border-color: #f8983a;
             }
         }
 
@@ -120,7 +120,7 @@
             }
 
             a:hover {
-                color: #eee;
+                color: black;
             }
         }
     }

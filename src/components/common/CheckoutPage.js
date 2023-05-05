@@ -2,6 +2,8 @@ import { Box, Button, Center, Flex, Heading, Text } from "@chakra-ui/react";
 import React, { useState } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import { useNavigate } from "react-router-dom";
+import "./CheckoutPage.css"
+import man from "./Man.png"
 
 const CheckoutPage = () => {
   const [shippingData, setData] = useState({
@@ -129,130 +131,109 @@ const CheckoutPage = () => {
               >
                 Add new address
               </Text> */}
-              <form onSubmit={handleSubmit} style={{backgroundColor:"white" , padding:'30px 30px 10px 30px' , borderRadius:"10px", marginTop:"-150px"}}>
-                <Box>
-                  <Box>
+              
+              <div className="Parent">
+             
+                <div className="ImageDiv">
+                  <img src={man}></img>
+                </div>
+              <div className="form-container">
 
-                    <br />
-                    <Box borderBottom={"1px solid #f8983a"}>
-                      <input
-                        style={{ width: "100%" , textAlign: "center", padding:"5px"}}
-                        placeholder="Enter Your Name"
-                        onChange={handleChange}
-                        value={shippingData.fullname}
-                        name="fullname"
-                        type="text"
-                        color="blue"
-                        required
-                      />
-                    </Box>
-                  </Box>
-                  <Box>
+                
 
-                    <br />
-                    <Box borderBottom={"1px solid #f8983a"}>
-                      <input
-                        style={{ width: "100%" , textAlign: "center" , padding:"5px"}}
-                        placeholder="Enter mobile Number"
-                        value={shippingData.mobile}
-                        onChange={handleChange}
-                        name="mobile"
-                        type="number"
-                        color="black"
-                        required
-                      />
-                    </Box>
-                  </Box>
-                </Box>
-                <Box>
-                  <Box>
+              <form
+      onSubmit={handleSubmit}
+      
+    >
+      <div className="form-group">
+        <div className="form-field">
+          
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Enter Your Name"
+            value={shippingData.fullname}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="form-field">
+          
+          <input
+            type="number"
+            id="mobile"
+            name="mobile"
+            placeholder="Enter mobile Number"
+            value={shippingData.mobile}
+            onChange={handleChange}
+            required
+          />
+        </div>
+      </div>
+      <div className="form-group">
+        <div className="form-field">
+          
+          <input
+            type="number"
+            id="pincode"
+            name="pincode"
+            placeholder="Enter Your Pincode"
+            disabled={false}
+            onChange={getPincodeData}
+            required
+          />
+        </div>
+        <div className="form-field">
+          
+          <input
+            type="text"
+            id="city"
+            name="city"
+            placeholder="City"
+            readOnly
+            value={shippingData.city}
+            required
+          />
+        </div>
+      </div>
+      <div className="form-group">
+        <div className="form-field">
+        
+          <input
+            type="text"
+            id="state"
+            name="state"
+            placeholder="State"
+            readOnly
+            value={shippingData.state}
+            required
+          />
+        </div>
+        <div className="form-field">
+          
+          <input
+            type="text"
+            id="street"
+            name="street"
+            placeholder="Enter your Street Details"
+            onChange={handleChange}
+            value={shippingData.street}
+          />
+        </div>
+      </div>
+      <div className="form-group">
+        <input
+          type="submit"
+          value="Continue"
+          className="submit-btn"
+        />
+      </div>
+    </form>
+              </div>
+ 
+              </div>
 
-                    <br />
-                    <Box borderBottom={"1px solid #f8983a"}>
-                      <input
-                        style={{ width: "100%" ,textAlign: "center" , padding:"5px" }}
-                        placeholder="Enter Your Pincode"
-                        name="pincode"
-                        disabled={false}
-                        onChange={getPincodeData}
-                        color="black"
-                        type="number"
-                        required
-                      />
-                    </Box>
-                  </Box>
-                  <Box>
-
-                    <br />
-                    <Box borderBottom={"1px solid #f8983a"}>
-                      <input
-                      style={{ width: "100%" , textAlign: "center" , padding:"5px"}}
-                        type="text"
-                        disabled={true}
-                        name="city"
-                        readOnly
-                        value={shippingData.city}
-                        placeholder="Waiting for City"
-                        color="black"
-                        required
-                      />
-                    </Box>
-                  </Box>
-                </Box>
-                <Box>
-                  <Box>
-
-                    <br />
-                    <Box borderBottom={"1px solid #f8983a"}>
-                      <input
-                        style={{ width: "100%",  textAlign: "center", padding:"5px"}}
-                        type="text"
-                        color="black"
-                        disabled={true}
-                        name="state"
-                        readOnly
-                        value={shippingData.state}
-                        placeholder="Waiting for State"
-                        required
-                      />
-                    </Box>
-                  </Box>
-                  <Box>
-
-                    <br />
-                    <Box borderBottom={"1px solid #f8983a"}>
-  <input
-    style={{ width: "100%", textAlign: "center"  , padding:"5px"}}
-    type="text"
-    name="street"
-    onChange={handleChange}
-    value={shippingData.street}
-    placeholder="Enter your Street Details"
-    color="black"
-  />
-</Box>
-
-                  </Box>
-                </Box>
-                <Box >
-                  <input
-                    style={{
-                      backgroundColor: "#F6AD55",
-                      
-                      marginBottom:"40px",
-                    
-                      cursor: "pointer",
-                      color: "black",
-                      padding: "11px",
-                      borderRadius: "10px",
-                      fontWeight: 600,
-                      marginTop: 10,
-                    }}
-                    type="submit"
-                    value="ADD ADDRESS & CONTINUE"
-                  />
-                </Box>
-              </form>
             </Box>
           ) : (
             <StripeCheckout

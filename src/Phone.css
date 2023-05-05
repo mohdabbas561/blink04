@@ -18,7 +18,7 @@
 }
 
 .textx1:hover {
-  border-color: #fff;
+  border-color: #f8983a;
 }
 
 .textx1:focus {
@@ -59,8 +59,9 @@
 
 .button1:hover,
 .button2:hover {
-  background-color: #fff;
+  background-color: white;
   color: #f8983a;
+  border: 2px solid #f8983a;
 }
 
 .button2 {
